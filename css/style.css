@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root{
+    --bg-page-default: #f5f6fa;
+    --bg-page-secondary: #fff;
+    --bg-page-dark: #212631;
+
+    --color-text-default: #212631;
+    --color-text-secondary: #f5f6fa;
+    --color-text-desc: #d0d5e1;
+
+    --font-text-default: "Unbounded", sans-serif;
+    --font-p-default: "Manrope", sans-serif;
+}
+
+section, header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 50px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: var(--color-text-default) solid 5px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.container {
+    width: 1440px;
+}
+
+body {
+    background: var(--bg-page-default);
+    font-family: var(--font-text-default);
+}
+
+header {
+    background: var(--bg-page-secondary);
+    position: fixed;
+    top: 0;
+    height: 80px;
+    padding: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+}
+
+.header__logo {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.header__nav {
+    gap: 50px;
+}
+
+header .nav__link {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+    color: var(--color-text-default);
+    cursor: pointer;
+}
+
+.header-cta {
+    background: var(--bg-page-dark);
+    color: var(--color-text-secondary);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    margin-top: 80px;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:  red;
+}
+
+
+.services .container {
+
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--color-text-default);
+    width: 300px;
+    height: 300px;
+    padding: 25px;
+    background: green;
+    background: var(--bg-page-secondary);
+    border-radius: 25px;
+}
+
+.service-card__btn {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.service-card__input {
+    width: 80%;
+    background: none;
+    border: var(--color-text-default) solid 5px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.service-card__desc {
+    font-family: var(--font-p-default);
+}
+
+i {
+    margin-left: 15px;
+    font-size: 22px !important;
+}
+
+.info {
+    margin: 80px 0 80px 0;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background: var(--bg-page-secondary);
+    border-radius: 50px;
+}
+
+.info-card {
+    border-radius: 25px;
+    background: var(--bg-page-default);
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+
+}
+
+.portfolio, .reviews, .fact {
+    background: var(--bg-page-dark);
+    color: var(--color-text-secondary);
+    padding-top: 50px;
+}
+
+.portfolio__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.portfolio__card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-card__img {
+    width: 50%;
+    height: 400px;
+}
+
+.portfolio-card__all-desc {
+    width: 50%;
+    padding-left: 50px;
+}
