@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BElARIX agency</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+</head>
+
+<body class="order-html">
+    <div class="header-order">
+        <div class="bigName">belarix agency</div>
+        <div class="container">
+            <button class="portfolio-card__cta underline-right" onclick="window.location.href='index.html'">повернутися
+                на головну</button>
+        </div>
+    </div>
+    <section class="order-form">
+        <div class="container">
+            <h2 class="title">Зв’яжіться з нами!</h2>
+            <div class="form">
+                <p>Заповніть форму, і ми зв'яжемося з вами найближчим часом для уточнення деталей.</p>
+                <form action="">
+                    <div class="inputs">
+                    <input type="text" name="" id="name" placeholder="Ім'я" autocomplete="off">
+                    <input type="tel" name="" id="tel" autocomplete="off">
+                    <input type="email" name="" id="email" placeholder="Email (по бажанню)" autocomplete="off">
+                    <input type="text" name="" id="brend" placeholder="Компанія / Бренд (по бажанню)" autocomplete="off">
+                    <textarea name="" id="comment" placeholder="Коментар (по бажанню)" autocomplete="off"></textarea>
+</div>
+                    <div class="select-group">
+                        <div class="option-group">
+                            <h4>Послуги</h4>
+                            <label class="radio-btn">
+                                <input type="radio" name="service" value="landing">
+                                <span>Лендінг</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="service" value="business-site">
+                                <span>Сайт для бізнесу</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="service" value="shop">
+                                <span>Інтернет-магазин</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="service" value="other">
+                                <span>Інше</span>
+                            </label>
+                        </div>
+
+                        <div class="option-group">
+                            <h4>Бюджет</h4>
+                            <label class="radio-btn">
+                                <input type="radio" name="budget" value="250">
+                                <span>$250</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="budget" value="500">
+                                <span>$500</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="budget" value="1000">
+                                <span>$1000</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="budget" value="5000">
+                                <span>$5000+</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="budget" value="other">
+                                <span>Інший</span>
+                            </label>
+                        </div>
+
+                        <div class="option-group">
+                            <h4>Як з вами зв'язатись?</h4>
+                            <label class="radio-btn">
+                                <input type="radio" name="contact" value="call">
+                                <span>Зателефонувати</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="contact" value="telegram">
+                                <span>Telegram</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="contact" value="whatsapp">
+                                <span>WhatsApp</span>
+                            </label>
+
+                            <label class="radio-btn">
+                                <input type="radio" name="contact" value="email">
+                                <span>Email</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="service-card__btn" id="submitForm"><span>Надіслати</span> <i
+                        class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__logo bigName">belarix agency</div>
+        <div class="container">
+            <div class="footer-button">
+                <button class="portfolio-card__cta underline-right" onclick="window.location.href='stages.html'">етапи роботи</button>
+                <button class="portfolio-card__cta underline-right" onclick="window.location.href='social-links.html'">наші соцмережі</button>
+            </div>
+        </div>
+    </footer>
+    <div id="errorModal" class="error-modal hidden">
+        <div class="error-content">
+          <button id="closeError" class="close-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+          <p id="errorText"></p>
+        </div>
+      </div>
+    <script src="./js/order-js/order.js"></script>
+    <script src="https://kit.fontawesome.com/9c8013b336.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
