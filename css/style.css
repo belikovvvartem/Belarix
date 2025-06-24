@@ -652,10 +652,11 @@ form button {
         flex-direction: column;
     }
 
-    .hero .hero__logo {
+    .hero .hero__logo, .bigName {
         width: 100%;
-        font-size: 7vw;
+        font-size: 8vw;
         border: none;
+        word-spacing: 10px;
     }
 
     .hero-right {
@@ -712,6 +713,61 @@ form button {
         font-size: 15px;
     }
 
+
+
+    .fact .container {
+        margin: 0 0 50px 0;
+    }
+
+    .fact__title {
+        font-size: 25px;
+    }
+
+    footer .container {
+        width: 100%;
+    }
+
+    footer .bigName {
+        margin-top: 0px;
+    }
+
+    .footer-button {
+        width: 100%;
+    }
+
+    .footer-button button {
+        font-size: 12px;
+    }
+
+    .footer-button .underline-right {
+        width: 135px;
+    }
+    
+    .footer-button .underline-right:last-child {
+        width: 163px;
+    }
+
+    /*order html*/
+
+    .order-form {
+        margin-top: 50px;
+    }
+
+    .form input {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .option-group {
+    }
+    
+    .radio-btn span {
+        padding: 10px 20px;
+        margin-right: 5px;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
 }
 
 /* Дуже малі екрани (наприклад, iPhone SE) */
