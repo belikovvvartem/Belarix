@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://belarix-agency.com/sitemap.xml
