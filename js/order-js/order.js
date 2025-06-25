@@ -206,26 +206,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// // Заборонити відкриття контекстного меню (права кнопка)
-// document.addEventListener('contextmenu', e => e.preventDefault());
+// Заборонити відкриття контекстного меню (права кнопка)
+document.addEventListener('contextmenu', e => e.preventDefault());
 
-// // Заборонити деякі комбінації клавіш для DevTools
-// document.addEventListener('keydown', e => {
-//   if (
-//     e.key === 'F12' ||                             // F12
-//     (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || // Ctrl+Shift+I/J
-//     (e.ctrlKey && e.shiftKey && e.key === 'C') ||  // Ctrl+Shift+C
-//     (e.ctrlKey && e.key === 'U')                    // Ctrl+U (перегляд коду сторінки)
-//   ) {
-//     e.preventDefault();
-//   }
-// });
+// Заборонити деякі комбінації клавіш для DevTools
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'F12' ||                             // F12
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || // Ctrl+Shift+I/J
+    (e.ctrlKey && e.shiftKey && e.key === 'C') ||  // Ctrl+Shift+C
+    (e.ctrlKey && e.key === 'U')                    // Ctrl+U (перегляд коду сторінки)
+  ) {
+    e.preventDefault();
+  }
+});
 
-// // Відключити відкриття консолі через "debugger"
-// (function() {
-//   const devtools = () => {
-//     debugger;
-//   };
-//   setInterval(devtools, 1000);
-// })();
+// Відключити відкриття консолі через "debugger"
+(function() {
+  const devtools = () => {
+    debugger;
+  };
+  setInterval(devtools, 1000);
+})();
 
