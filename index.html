@@ -9,6 +9,22 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://stenavskyi.matomo.cloud/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '3']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = 'https://cdn.matomo.cloud/stenavskyi.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
 </head>
 
 <body>
@@ -70,8 +86,10 @@
                     <p class="service-card__desc">Не знаєте, який сайт вам потрібен? Ми підберемо найкращий варіант саме
                         для
                         вас.</p>
-                    <input type="tel" name="" id="" class="service-card__input" placeholder="+380 ..." autocomplete="off">
-                    <button class="service-card__btn" id="submitNumber">Обговорити ідею <i class="fa-solid fa-headset"></i></button>
+                    <input type="tel" name="" id="" class="service-card__input" placeholder="+380 ..."
+                        autocomplete="off">
+                    <button class="service-card__btn" id="submitNumber">Обговорити ідею <i
+                            class="fa-solid fa-headset"></i></button>
                 </div>
             </div>
         </div>
@@ -216,18 +234,20 @@
         <div class="footer__logo bigName">belarix agency</div>
         <div class="container">
             <div class="footer-button">
-                <button class="portfolio-card__cta underline-right" onclick="window.location.href='stages.html'">етапи роботи</button>
-                <button class="portfolio-card__cta underline-right" onclick="window.location.href='social-links.html'">наші соцмережі</button>
+                <button class="portfolio-card__cta underline-right" onclick="window.location.href='stages.html'">етапи
+                    роботи</button>
+                <button class="portfolio-card__cta underline-right"
+                    onclick="window.location.href='social-links.html'">наші соцмережі</button>
             </div>
         </div>
     </footer>
 
     <div id="errorModal" class="error-modal hidden">
         <div class="error-content">
-          <button id="closeError" class="close-btn"><i class="fa-regular fa-circle-xmark"></i></button>
-          <p id="errorText"></p>
+            <button id="closeError" class="close-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+            <p id="errorText"></p>
         </div>
-      </div>
+    </div>
 
     <script src="./js/script.js"></script>
     <script src="./js/order-js/order.js"></script>
