@@ -41,6 +41,7 @@ button {
     align-items: center;
     background: none;
     border: var(--color-text-default) solid 3px;
+    color: var(--color-text-default);
     padding: 15px 25px;
     border-radius: 25px;
     cursor: pointer;
@@ -501,10 +502,15 @@ footer {
 
 .form {
     border-top: 1px solid var(--color-text-desc);
+    text-align: left;
 }
 
 .form p {
     color: #9ea3ae;
+}
+
+.p-desc {
+    text-align: center;
 }
 
 .form input {
@@ -529,7 +535,8 @@ footer {
     resize: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     box-shadow: 0 0 5px 0.1px var(--color-text-desc);
 }
@@ -578,7 +585,31 @@ form button {
 
 .order-html .footer__logo {
     margin-top: 0;
-} 
+}
+
+/*social limks*/
+
+.social-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: 0 25px;
+    border: 1px solid var(--color-text-default);
+}
+
+.social-link, .social-link i, .social-link h3 {
+    color: var(--color-text-default);
+    text-decoration: none;
+}
+
+.social-link i {
+    font-size: 35px !important;
+}
+
+.social-link h3  {
+    font-size: 25px;
+}
 
 
 
@@ -630,7 +661,10 @@ form button {
 
 
 @media (max-width: 768px) {
-    :root, body, .container {
+
+    :root,
+    body,
+    .container {
         max-width: 768px !important;
         overflow-x: hidden;
     }
@@ -638,6 +672,22 @@ form button {
     .container {
         box-sizing: border-box;
         padding: 0 20px;
+    }
+
+    .hero .hero__logo,
+    .bigName,
+    .hero-right,
+    .services__desc,
+    .service-cards,
+    .info-cards,
+    .portfolio-card__img,
+    .portfolio-card__all-desc,
+    .review-cards,
+    .review-card,
+    .footer-button,
+    .form input,
+    footer .container {
+        width: 100%;
     }
 
     header {
@@ -652,31 +702,37 @@ form button {
         flex-direction: column;
     }
 
-    .hero .hero__logo, .bigName {
-        width: 100%;
+    .hero .hero__logo,
+    .bigName {
         font-size: 8vw;
         border: none;
         word-spacing: 10px;
     }
 
+    .hero__title {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .hero__btn {
+        margin: auto;
+    }
+
     .hero-right {
-        width: 100%;
         font-size: 15px;
     }
 
     .services__desc {
-        width: 100%;
         font-size: 12px;
     }
 
     .service-cards {
         flex-direction: column;
-        width: 100%;
         gap: 25px;
     }
 
     .service-card {
-        height: 250px;
+        height: 200px;
     }
 
     .service-card:last-child {
@@ -685,7 +741,6 @@ form button {
 
     .info-cards {
         flex-direction: column;
-        width: 100%;
         gap: 25px;
         margin-left: -25px;
     }
@@ -695,12 +750,10 @@ form button {
     }
 
     .portfolio-card__img {
-        width: 100%;
         height: auto;
     }
 
     .portfolio-card__all-desc {
-        width: 100%;
         padding: 0;
         margin-top: 25px;
     }
@@ -713,7 +766,19 @@ form button {
         font-size: 15px;
     }
 
+    .review-cards {
+        flex-direction: column;
+        gap: 25px;
+    }
 
+    .review-card {
+        height: 550px;
+    }
+
+    .review-card:first-child,
+    .review-card:last-child {
+        height: 350px;
+    }
 
     .fact .container {
         margin: 0 0 50px 0;
@@ -723,16 +788,8 @@ form button {
         font-size: 25px;
     }
 
-    footer .container {
-        width: 100%;
-    }
-
     footer .bigName {
         margin-top: 0px;
-    }
-
-    .footer-button {
-        width: 100%;
     }
 
     .footer-button button {
@@ -742,7 +799,7 @@ form button {
     .footer-button .underline-right {
         width: 135px;
     }
-    
+
     .footer-button .underline-right:last-child {
         width: 163px;
     }
@@ -754,20 +811,16 @@ form button {
     }
 
     .form input {
-        width: 100%;
         margin-top: 15px;
     }
 
-    .option-group {
-    }
-    
     .radio-btn span {
         padding: 10px 20px;
         margin-right: 5px;
         font-size: 12px;
         margin-top: 5px;
     }
-    
+
 }
 
 /* Дуже малі екрани (наприклад, iPhone SE) */

@@ -22,4 +22,3 @@ document.querySelectorAll('[id^="order"]').forEach(btn => {
         window.location.href = 'order.html';
     });
 });
-
