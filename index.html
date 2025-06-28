@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belarix Agency — Розробка сайтів під ключ</title>
-    <meta name="description" content="Belarix Agency створює сучасні сайти під ключ. Адаптивна верстка, швидка розробка, зрозумілий процес і підтримка.">
-    
+    <meta name="description"
+        content="Belarix Agency створює сучасні сайти під ключ. Адаптивна верстка, швидка розробка, зрозумілий процес і підтримка.">
+
     <link rel="canonical" href="https://belarix-agency.com/index.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Belarix Agency — Розробка сайтів під ключ">
-    <meta property="og:description" content="Розробка сайтів на HTML, CSS, JS. Адаптивність, швидкість та якість. Замовляйте сайт вже зараз.">
+    <meta property="og:description"
+        content="Розробка сайтів на HTML, CSS, JS. Адаптивність, швидкість та якість. Замовляйте сайт вже зараз.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://belarix-agency.com/"> 
+    <meta property="og:url" content="https://belarix-agency.com/">
     <meta property="og:image" content="https://belarix-agency.com/favicon.png">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Belarix Agency — Розробка сайтів">
@@ -24,7 +26,7 @@
 
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="stylesheet" href="./css/normalize.css">
 
     <script type="application/ld+json">
         {
@@ -41,28 +43,28 @@
         </script>
 
     <!-- Matomo -->
-    <script>
+    <script defer>
         var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function () {
             var u = "https://stenavskyi.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', '3']);
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = 'https://cdn.matomo.cloud/stenavskyi.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s);
+            var d = document, g = d.createElement('script');
+            g.src = 'https://cdn.matomo.cloud/stenavskyi.matomo.cloud/matomo.js';
+            g.defer = true;
+            d.head.appendChild(g);
         })();
     </script>
     <!-- End Matomo Code -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEKYQPQ269"></script>
-    <script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-HEKYQPQ269"></script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-HEKYQPQ269');
     </script>
 </head>
@@ -102,7 +104,7 @@
                     <p class="service-card__desc">Ідеально для презентації товару чи послуги. Швидко, ефективно, з
                         фокусом
                         на результат.</p>
-                    <button class="service-card__btn" id="order"  aria-label="Замовити лендінг"><span>Замовити</span> <i
+                    <button class="service-card__btn" id="order" aria-label="Замовити лендінг"><span>Замовити</span> <i
                             class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
@@ -110,7 +112,8 @@
                     <p class="service-card__desc">Створимо багатосторінковий сайт з усім необхідним для вашої справи —
                         від
                         структури до зручної панелі керування.</p>
-                    <button class="service-card__btn" id="order" aria-label="Замовити сайт для бізнесу"><span>Замовити</span> <i
+                    <button class="service-card__btn" id="order"
+                        aria-label="Замовити сайт для бізнесу"><span>Замовити</span> <i
                             class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
@@ -118,7 +121,8 @@
                     <p class="service-card__desc">Повноцінне рішення для онлайн-продажів з кошиком, оплатою та
                         аналітикою.
                     </p>
-                    <button class="service-card__btn" id="order" aria-label="Замовити інтернет-магазин"><span>Замовити</span> <i
+                    <button class="service-card__btn" id="order"
+                        aria-label="Замовити інтернет-магазин"><span>Замовити</span> <i
                             class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="service-card">
@@ -128,8 +132,8 @@
                         вас.</p>
                     <input type="tel" name="" id="" class="service-card__input" placeholder="+380 ..."
                         autocomplete="off">
-                    <button class="service-card__btn" id="submitNumber"  aria-label="Замовити консультацію">Обговорити ідею <i
-                            class="fa-solid fa-headset"></i></button>
+                    <button class="service-card__btn" id="submitNumber" aria-label="Замовити консультацію">Обговорити
+                        ідею <i class="fa-solid fa-headset"></i></button>
                 </div>
             </div>
         </div>
@@ -180,7 +184,8 @@
             <h2 class="portfolio__title title">Портфоліо</h2>
             <div class="portfolio__cards">
                 <div class="portfolio__card">
-                    <img src="./src/img/portfolio/portfolio-stenavskyi.webp" alt="Кейс Belarix Agency" class="portfolio-card__img" />
+                    <img src="./src/img/portfolio/portfolio-stenavskyi.webp" width="2884" height="1878" alt="Кейс Belarix Agency"
+                        class="portfolio-card__img" />
                     <div class="portfolio-card__all-desc">
                         <div class="portfolio-card__title-desc">
                             <h3 class="portfolio-card__title">The Stenavskyi Agency</h3>
@@ -188,11 +193,13 @@
                                 спеціалізується на таргетованій рекламі, SMM, створенні воронок продажів та лендінгів.
                                 Допомагає брендам масштабуватись і ефективно просуватись онлайн</p>
                         </div>
-                        <button class="portfolio-card__cta underline-right" onclick="window.open('https://stenavskyi.com', '_blank')">Переглянути сайт</button>
+                        <button class="portfolio-card__cta underline-right"
+                            onclick="window.open('https://stenavskyi.com', '_blank')">Переглянути сайт</button>
                     </div>
                 </div>
                 <div class="portfolio__card">
-                    <img src="./src/img/portfolio/portfolio-tritonix.webp" alt="Кейс Belarix" class="portfolio-card__img" />
+                    <img src="./src/img/portfolio/portfolio-tritonix.webp" width="2884" height="1878" alt="Кейс Belarix"
+                        class="portfolio-card__img" />
                     <div class="portfolio-card__all-desc">
                         <div class="portfolio-card__title-desc">
                             <h3 class="portfolio-card__title">Tritonix Studio</h3>
@@ -200,7 +207,8 @@
                                 сайтів та креативних рішень. Наразі вона перейменована на Belarix Agency, однак зберігає
                                 свій підхід, команду та цінності.</p>
                         </div>
-                        <button class="portfolio-card__cta underline-right" onclick="window.open('https://tritonix.site', '_blank')">Переглянути сайт</button>
+                        <button class="portfolio-card__cta underline-right"
+                            onclick="window.open('https://tritonix.site', '_blank')">Переглянути сайт</button>
                     </div>
                 </div>
             </div>

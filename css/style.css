@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/Unbounded.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope.woff2') format('woff2');
+}
 
 :root {
     --bg-page-default: #f5f6fa;
@@ -599,7 +606,9 @@ form button {
     margin-top: 25px;
 }
 
-.social-link, .social-link i, .social-link h3 {
+.social-link,
+.social-link i,
+.social-link h3 {
     color: var(--color-text-default);
     text-decoration: none;
 }
@@ -608,7 +617,7 @@ form button {
     font-size: 35px !important;
 }
 
-.social-link h3  {
+.social-link h3 {
     font-size: 25px;
 }
 
