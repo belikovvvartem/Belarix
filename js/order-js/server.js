@@ -4,9 +4,9 @@ const fetch = require('node-fetch');
 
 const app = express();
 
-// Налаштування CORS для дозволу запитів із локального фронтенду
+// Налаштування CORS для дозволу запитів із фронтенду
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'https://your-production-client.com'], // Додайте продакшен-домен, якщо є
+  origin: ['https://belarix-agency.com', 'http://127.0.0.1:5500'], // Дозволяємо запити з продакшену та локально
   methods: ['GET', 'POST', 'OPTIONS'], // Дозволені методи
   allowedHeaders: ['Content-Type'] // Дозволені заголовки
 }));
@@ -14,7 +14,7 @@ app.use(cors({
 // Парсинг JSON-тіл запитів
 app.use(express.json());
 
-// Обробка OPTIONS-запитів для CORS (хоча cors middleware це робить автоматично)
+// Обробка OPTIONS-запитів для маршруту /submit (хоча cors middleware робить це автоматично)
 app.options('/submit', cors());
 
 // Маршрут для обробки POST-запитів на /submit
