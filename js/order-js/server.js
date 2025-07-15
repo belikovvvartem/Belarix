@@ -6,27 +6,22 @@ const fetch = require('node-fetch');
 
 const app = express();
 
-// Налаштування CORS для дозволу запитів із фронтенду
 app.use(cors({
-  origin: ['https://belarix-agency.com', 'http://127.0.0.1:5500'], // Дозволяємо продакшен і локальний фронтенд
+  origin: ['https://belarix-agency.com', 'http://127.0.0.1:5500'], 
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
 
-// Парсинг JSON-тіл запитів
 app.use(express.json());
 
-// Обробка OPTIONS-запитів для маршруту /submit
 app.options('/submit', cors());
 
-// Маршрут для обробки POST-запитів на /submit
 app.post('/submit', async (req, res) => {
   console.log('Отримано запит на /submit:', req.body);
 
   const data = req.body;
   let message;
 
-  // Формування повідомлення залежно від типу заявки
   if (data.type === 'order') {
     message = `
 📩 Нова заявка з форми:
@@ -49,11 +44,9 @@ app.post('/submit', async (req, res) => {
     return res.status(400).json({ error: 'Невідомий тип заявки' });
   }
 
-  // Отримання токена та ID чату з змінних оточення
   const token = process.env.TOKEN;
   const chatId = process.env.CHAT_ID;
 
-  // Перевірка, чи змінні оточення встановлені
   if (!token || !chatId) {
     console.error('Помилка: TOKEN або CHAT_ID не встановлені');
     return res.status(500).json({ error: 'Серверна помилка: відсутні налаштування Telegram' });
@@ -81,7 +74,6 @@ app.post('/submit', async (req, res) => {
   }
 });
 
-// Запуск сервера
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Сервер запущено на порту ${port}`);
