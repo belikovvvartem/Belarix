@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const res = await fetch('https://belarix.onrender.com/submit', {
+        const res = await fetch('https://belarix-qub0.onrender.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const res = await fetch('https://belarix.onrender.com/submit', {
+        const res = await fetch('https://belarix-qub0.onrender.com/submit', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(formData)
