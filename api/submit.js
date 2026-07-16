@@ -30,10 +30,11 @@ const ALLOWED_ORIGINS = [
   
     const data = req.body;
     let message;
+    const buttons = [];
   
     if (data.type === 'order') {
       message = `
-  📩 Нова заявка з форми:
+  📩 Нова заявка
   👤 Ім'я: ${data.name}
   📞 Телефон: ${data.tel}
   📧 Email: ${data.email}
@@ -43,11 +44,26 @@ const ALLOWED_ORIGINS = [
   📲 Як зв'язатися: ${data.contact}
   📝 Коментар: ${data.comment}
       `;
+  
+      // кнопка дзвінка — завжди, номер телефону обов'язковий
+      buttons.push({ text: '📞 Подзвонити', url: `tel:${data.tel}` });
+  
+      // кнопка Telegram — за номером телефону
+      const telClean = data.tel.replace(/[^\d]/g, '');
+      buttons.push({ text: '✈️ Написати в Telegram', url: `https://t.me/+${telClean}` });
+  
+      // кнопка email — тільки якщо клієнт його вказав
+      if (data.email && data.email !== '-') {
+        buttons.push({ text: '📧 Написати на пошту', url: `mailto:${data.email}` });
+      }
     } else if (data.type === 'consultation') {
       message = `
-  📩 Нова заявка на консультацію:
+  📩 Нова заявка на консультацію
   📞 Телефон: ${data.tel}
       `;
+      buttons.push({ text: '📞 Подзвонити', url: `tel:${data.tel}` });
+      const telClean = data.tel.replace(/[^\d]/g, '');
+      buttons.push({ text: '✈️ Написати в Telegram', url: `https://t.me/+${telClean}` });
     } else {
       console.log('Невідомий тип заявки:', data.type);
       return res.status(400).json({ error: 'Невідомий тип заявки' });
@@ -68,7 +84,14 @@ const ALLOWED_ORIGINS = [
       const tgResponse = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: message })
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          reply_markup: {
+            // кожна кнопка в окремому рядку, так зручніше тапати з телефону
+            inline_keyboard: buttons.map(btn => [btn])
+          }
+        })
       });
   
       if (tgResponse.ok) {
