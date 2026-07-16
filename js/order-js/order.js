@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorModal = document.getElementById('errorModal');
   const errorText = document.getElementById('errorText');
   const closeError = document.getElementById('closeError');
+  const loadingOverlay = document.getElementById('loadingOverlay');
+
+  // адреса нашої Vercel-функції (той самий домен, тому CORS вже не проблема)
+  const API_URL = '/api/submit';
 
   function showError(msg) {
     errorText.textContent = msg;
@@ -15,6 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function showSuccess(msg) {
     errorText.textContent = msg;
     errorModal.classList.remove('hidden');
+  }
+
+  function showLoading() {
+    if (loadingOverlay) loadingOverlay.classList.remove('hidden');
+  }
+
+  function hideLoading() {
+    if (loadingOverlay) loadingOverlay.classList.add('hidden');
+  }
+
+  // блокує/розблоковує всі поля й кнопки всередині форми, щоб під час
+  // відправки нічого не можна було ще раз натиснути
+  function setFormDisabled(formEl, disabled) {
+    formEl.querySelectorAll('input, textarea, button').forEach(el => {
+      el.disabled = disabled;
+    });
   }
 
   closeError.onclick = () => {
@@ -67,12 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       if (!nameInput.value.trim()) {
-        showError('Введіть ім’я');
+        showError('Введіть ім\u2019я');
         nameInput.focus();
         return;
       }
       if (nameInput.value.length > 10) {
-        showError('Ім’я не може бути довше 10 символів');
+        showError('Ім\u2019я не може бути довше 10 символів');
         nameInput.focus();
         return;
       }
@@ -98,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!form.querySelector('input[name="contact"]:checked')) {
-        showError('Оберіть спосіб зв’язку');
+        showError('Оберіть спосіб зв\u2019язку');
         return;
       }
 
@@ -114,8 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
         comment: document.querySelector('textarea').value.trim() || '-'
       };
 
+      // блокуємо форму й показуємо завантаження одразу після успішної валідації
+      setFormDisabled(form, true);
+      showLoading();
+
       try {
-        const res = await fetch('https://belarix-qub0.onrender.com/submit', {
+        const res = await fetch(API_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -124,11 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.ok) {
           showSuccess('Заявка успішно надіслана!');
           form.reset();
+          telInput.value = '+380';
         } else {
           showError('Помилка при відправленні заявки');
         }
       } catch {
         showError('Помилка мережі при відправленні заявки');
+      } finally {
+        hideLoading();
+        setFormDisabled(form, false);
       }
     });
   }
@@ -163,8 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
         tel: phone
       };
 
+      indexTelInput.disabled = true;
+      indexBtn.disabled = true;
+      showLoading();
+
       try {
-        const res = await fetch('https://belarix-qub0.onrender.com/submit', {
+        const res = await fetch(API_URL, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(formData)
@@ -172,12 +204,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (res.ok) {
           showSuccess('Ваша заявка на консультацію успішно надіслана!');
-          indexTelInput.value = '+';
+          indexTelInput.value = '+380';
         } else {
           showError('Помилка при відправленні заявки');
         }
       } catch {
         showError('Помилка мережі при відправленні заявки');
+      } finally {
+        hideLoading();
+        indexTelInput.disabled = false;
+        indexBtn.disabled = false;
       }
     });
   }
