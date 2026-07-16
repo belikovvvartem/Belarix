@@ -689,6 +689,9 @@ form button {
     to { transform: rotate(360deg); }
 }
 
+.loading-overlay.hidden {
+    display: none;
+}
 
 
 
