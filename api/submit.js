@@ -1,11 +1,3 @@
-// Vercel Serverless Function
-// Розмісти цей файл у корені проєкту за шляхом /api/submit.js
-// Vercel сам перетворить його на ендпоінт https://ваш-домен.vercel.app/api/submit
-
-// В налаштуваннях проєкту на Vercel (Settings -> Environment Variables) додай:
-//   TG_BOT_TOKEN  — токен твого Telegram-бота
-//   TG_CHAT_ID    — id чату/каналу, куди слати заявки
-
 const ALLOWED_ORIGINS = [
     'https://belarix.vercel.app',
     'https://belarix-agency.com',
@@ -46,23 +38,13 @@ const ALLOWED_ORIGINS = [
   📝 Коментар: ${data.comment}
       `;
   
-      // кнопка дзвінка — завжди, номер телефону обов'язковий
-      buttons.push({ text: '📞 Подзвонити', url: `tel:${data.tel}` });
-  
-      // кнопка Telegram — за номером телефону
       const telClean = data.tel.replace(/[^\d]/g, '');
       buttons.push({ text: '✈️ Написати в Telegram', url: `https://t.me/+${telClean}` });
-  
-      // кнопка email — тільки якщо клієнт його вказав
-      if (data.email && data.email !== '-') {
-        buttons.push({ text: '📧 Написати на пошту', url: `mailto:${data.email}` });
-      }
     } else if (data.type === 'consultation') {
       message = `
   📩 Нова заявка на консультацію
   📞 Телефон: ${data.tel}
       `;
-      buttons.push({ text: '📞 Подзвонити', url: `tel:${data.tel}` });
       const telClean = data.tel.replace(/[^\d]/g, '');
       buttons.push({ text: '✈️ Написати в Telegram', url: `https://t.me/+${telClean}` });
     } else {
@@ -81,7 +63,6 @@ const ALLOWED_ORIGINS = [
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
   
     try {
-      // Node.js runtime на Vercel має вбудований fetch, node-fetch не потрібен
       const tgResponse = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -89,7 +70,6 @@ const ALLOWED_ORIGINS = [
           chat_id: chatId,
           text: message,
           reply_markup: {
-            // кожна кнопка в окремому рядку, так зручніше тапати з телефону
             inline_keyboard: buttons.map(btn => [btn])
           }
         })
